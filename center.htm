@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小柠的个人博客</title>
+    <link href="./css/style.css" rel="stylesheet">
+    <style>
+        body{
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topbg">
+        <h1>小柠的个人博客</h1>
+        <span>当你害怕跳的时候，就是你最应该跳的时候，不然你就永远不会跳。</span>
+        <div class="logintext">
+            <a href="./login.htm">登录</a>
+            <a href="./register.htm">注册</a>
+        </div>
+    </div>
+    <div class="dohang">
+        <ul class="dhul">
+            <li class="dh1"><a href="./index.htm">首页</a></li>
+            <li class="dh1"><a href="xinwen.htm">新闻</a></li>
+            <li class="dh1"><a href="/lvyou.htm">旅游</a></li>
+            <li class="dh1"><a href="/dongman.htm">动漫</a></li>
+            <li class="dh1"><a href="/yinyue.htm">音乐</a></li>
+            <li class="dh1"><a href="/suibi.htm">随笔</a></li>
+            <li class="dh1"><a href="./center.htm">会员中心</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="pcenter">
+            <h3>个人信息 <span onclick="showEdit()" id="edittext">修改</span></h3>
+            <div class="plist">
+                <span class="label">头像：</span>
+                <div class="heads">
+                    <img src="./tu/touxiang.jpg" alt="">
+                </div>
+            </div>
+            <div class="plist">
+                <span class="label">积分：</span>
+                <span style="color: #f5cb0d;font-size: 20px;">1000</span>
+            </div>
+            <div class="plist">
+                <span class="label">姓名：</span>
+                <span class="value">小柠</span>
+                <input class="valueInput" type="text" value="小柠" style="display: none;">
+            </div>
+            <div class="plist">
+                <span class="label">性别：</span>
+                <span class="value">男</span>
+                <input class="valueInput" type="text" value="男" style="display: none;">
+            </div>
+            <div class="plist">
+                <span class="label">联系方式：</span>
+                <span class="value">15555555555</span>
+                <input class="valueInput" type="text" value="15555555555" style="display: none;">
+            </div>
+            <div class="plist">
+                <span class="label">地址：</span>
+                <span class="value">北京市东城区东四十条101号</span>
+                <input class="valueInput" type="textarea" value="北京市东城区东四十条101号" style="display: none;">
+            </div>
+            <div class="plist "  >
+                <button class="valueInput quxiao" style="display: none;" onclick="hideEdit()">取消</button>
+                <button class="valueInput baocun" style="display: none;" onclick="hideEdit()">保存</button>
+            </div>
+            
+        </div>
+    </div>
+    <script>
+        function showEdit(){
+            var valueInputs = document.getElementsByClassName('valueInput')
+            var values = document.getElementsByClassName('value')
+            for (let index = 0; index < values.length; index++) {
+                const element = values[index];
+                element.style.display= 'none'
+            }
+            for (let index = 0; index < valueInputs.length; index++) {
+                const element = valueInputs[index];
+                element.style.display= 'block'
+            }
+            document.getElementById('edittext').style.display= 'none'
+        }
+        function hideEdit(){
+            var valueInputs = document.getElementsByClassName('valueInput')
+            var values = document.getElementsByClassName('value')
+            for (let index = 0; index < values.length; index++) {
+                const element = values[index];
+                element.style.display= 'block'
+            }
+            for (let index = 0; index < valueInputs.length; index++) {
+                const element = valueInputs[index];
+                element.style.display= 'none'
+            }
+            document.getElementById('edittext').style.display= 'inline'
+        }
+    </script>
+</body>
+
+</html>
